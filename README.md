@@ -56,7 +56,9 @@ Pentru a seta timpul
 In cazul erorii:
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 `$ cd /Users/valentin/.ssh`

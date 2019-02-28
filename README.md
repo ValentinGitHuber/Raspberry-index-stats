@@ -55,10 +55,8 @@ Pentru a seta timpul
 
 In cazul erorii:
 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
-
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 `$ cd /Users/valentin/.ssh`
@@ -135,6 +133,7 @@ $ python get-pip.py
 ## Instalare PyMongo
 
 `$ pip install pymongo==3.4.0`
+
 *Versiunea mai noua afișează probleme de compatibilitate*
 
 ## Trimitere date către Mongo din Python
@@ -236,7 +235,7 @@ $ export MONGO_URL='mongodb://localhost:27017/test'
 $ node main.js
 ```
 
-Go to http://192.168.0.98:3000/
+Deschide http://192.168.0.98:3000/
 
 Vizualizarea grafică a bazei de date se poate face cu Robo 3T conectând la 192.168.0.98:27017
 
@@ -281,5 +280,6 @@ thread2.start()
 
 `$ df -h`
 
+Implementarea notificarilor se poate face cu  
 https://codepen.io/ionic/pen/zkmhJ
 

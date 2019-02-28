@@ -1,0 +1,190 @@
+/* CSS declarations go here */
+
+@import url('https://fonts.googleapis.com/css?family=Muli:200,400');
+
+
+* {
+    font-size: 1.7rem;
+    color: #545454;
+    font-family: 'Muli', sans-serif;
+    letter-spacing: 0.15rem;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+    supported by Chrome and Opera */
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+/* Navbar */
+
+nav {
+    border-bottom: 0.1rem solid #F0F0F0;
+    padding: .4rem 1rem;
+    text-align: right;
+}
+
+nav img {
+    height: 1.3rem;
+    cursor: pointer;
+}
+
+nav span {
+    position: absolute;
+    font-size: 1.6rem;
+    line-height: 2.7rem;
+    left: 50%;
+    margin-right: -50%;
+    transform: translateX(-50%);
+}
+
+nav span img{
+    margin-right: .6rem;
+    margin-top: -0.4rem;
+}
+
+
+
+
+
+/* Header */
+
+header ul {
+    list-style: none;
+    padding: 0 1rem;
+    margin: 0;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+header ul li {
+    display: inline-block;
+    padding: .7rem 1.5rem;
+    cursor: pointer;
+}
+
+header ul li.focused {
+    color: #EE6262;
+    position: relative;
+    padding-bottom: .4rem;
+}
+
+header ul li.focused:after {
+    content: "";
+    background: black;
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    height: 0.15rem;
+    border-radius: .25rem;
+    width: 30%;
+    background: #EE6262;
+}
+
+
+
+
+
+/* Main */
+
+main {
+    padding-top: 2rem;
+}
+
+main .maintemp {
+    text-align: center;
+}
+
+main .maintemp span {
+    font-size: 6rem;
+    letter-spacing: 0;
+    font-family: 'miuiexlight', sans-serif;
+}
+
+main .maintemp span:nth-of-type(2n) {
+    letter-spacing: -10px;
+    font-family: 'Muli', sans-serif;
+    font-weight: 100;
+}
+
+main .data {
+    padding: 0 20%;
+}
+
+main .data>* {
+    display: inline-block;
+    width: 30vw;
+    vertical-align: top;
+    text-align: center;
+}
+
+main .data .weatherdata img {
+    height: 5rem;
+}
+
+main .data .moredata p {
+    margin: 0;
+    font-family: 'miuiexlight', sans-serif;
+    font-weight: bold;
+    letter-spacing: .5rem;
+}
+
+main .data .moredata p img {
+    height: 1.8rem;
+}
+
+
+
+/* Footer */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    top: 28rem;
+    white-space: nowrap;
+    max-width: 100vw;
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+footer .f_wrapper ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer .f_wrapper ul li {
+    display: inline-block;
+    margin: 0.5rem 2rem;
+    width: 5rem;
+    max-width: 5rem;
+    text-align: center;
+}
+
+footer .f_wrapper .line {
+    width: 300%;
+    background-image: url("/images/square.png");
+    background-size: 9rem auto;
+    height: calc(100% - 96.18px);
+    position: absolute;
+}
+
+footer .f_wrapper .line svg {
+    width: 100%;
+    height: 100%;
+    transform: translateY(1px);
+}

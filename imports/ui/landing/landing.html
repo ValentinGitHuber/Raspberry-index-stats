@@ -1,0 +1,203 @@
+<template name="landing">
+    <nav>
+        <img src="/images/menu.svg" alt="">
+        <span><img src="/images/icon.png">Raspbery</span>
+    </nav>
+    <header>
+        <ul>
+            <!-- <li class="focused">Lu</li> -->
+            <li data-day="1">Lu</li>
+            <li data-day="2">Ma</li>
+            <li data-day="3">Mi</li>
+            <li data-day="4">Jo</li>
+            <li data-day="5">Vi</li>
+            <li data-day="6">Sâ</li>
+            <li data-day="7">Du</li>
+        </ul>
+    </header>
+    <main>{{#with current }}
+        <div class="maintemp">
+            <span>{{t}}</span>
+            <span>&#730;C</span>
+        </div>
+        <div class="data">
+            <div class="weatherdata">
+                <img src="/images/conditions/sunny.svg">
+            </div><!--
+            --><div class="moredata">
+                <p><img src="/images/drop.svg"> {{u}}%</p>
+                <p><img src="/images/time.svg"> {{formatDate d}}</p>
+            </div>
+        </div>{{/with}}
+    </main>
+    <footer>
+        <div class="f_wrapper">
+            <ul>
+                <li>00:00</li><!--
+                --><li>2:00</li><!--
+                --><li>4:00</li><!--
+                --><li>6:00</li><!--
+                --><li>8:00</li><!--
+                --><li>10:00</li><!--
+                --><li>12:00</li><!--
+                --><li>14:00</li><!--
+                --><li>16:00</li><!--
+                --><li>18:00</li><!--
+                --><li>20:00</li><!--
+                --><li>22:00</li>
+            </ul>
+            <div class="line">
+                <svg>
+                	<defs>
+					    <linearGradient id="linear" x1="0%" y1="0%" x2="0%" y2="100%">
+					    <stop offset="10%" style="stop-color:#ED4949;stop-opacity:1" />
+      					<stop offset="100%" style="stop-color:#EF6666;stop-opacity:1" />
+					    </linearGradient>
+					  </defs>
+                    <path fill="url(#linear)"></path>
+                </svg>
+            </div>
+        </div>
+    </footer>
+	<script src="https://query.yahooapis.com/v1/public/yql?q=select item.condition.text from weather.forecast where woeid in (select woeid from geo.places(1) where text='chisinau')&format=json&callback=callbackFunction"></script>
+    <script>
+	  var callbackFunction = function(data) {
+	  data = data.query.results.channel.item.condition.text.toLowerCase();
+	  var imgToUse = '';
+
+	  switch (data) {
+	    case 'tornado':
+	        imgToUse = 'tornado'
+	        break; 
+	    case 'tropical storm':
+	        imgToUse = 'torrentialrain';
+	        break; 
+	    case 'hurricane':
+	        imgToUse = 'tornado';
+	        break; 
+	    case 'severe thunderstorms':
+	        imgToUse = 'storm';
+	        break; 
+	    case 'thunderstorms':
+	        imgToUse = 'storm';
+	        break; 
+	    case 'mixed rain and snow':
+	        imgToUse = 'sleet';
+	        break; 
+	    case 'mixed rain and sleet':
+	        imgToUse = 'sleet';
+	        break; 
+	    case 'mixed snow and sleet':
+	        imgToUse = 'sleet';
+	        break; 
+	    case 'freezing drizzle':
+	        imgToUse = 'icy';
+	        break; 
+	    case 'drizzle':
+	        imgToUse = 'icy';
+	        break; 
+	    case 'freezing rain':
+	        imgToUse = 'hail';
+	        break; 
+	    case 'showers':
+	        imgToUse = 'lightrain';
+	        break; 
+	    case 'snow flurries':
+	        imgToUse = 'lightsnow';
+	        break; 
+	    case 'light snow showers':
+	        imgToUse = 'sleet';
+	        break; 
+	    case 'blowing snow':
+	        imgToUse = 'lightsnow';
+	        break; 
+	    case 'snow':
+	        imgToUse = 'snow';
+	        break; 
+	    case 'hail':
+	        imgToUse = 'hail';
+	        break; 
+	    case 'sleet':
+	        imgToUse = 'sleet';
+	        break; 
+	    case 'dust':
+	        imgToUse = 'dust';
+	        break; 
+	    case 'foggy':
+	        imgToUse = 'fogday';
+	        break; 
+	    case 'haze':
+	        imgToUse = 'fogday';
+	        break; 
+	    case 'smoky':
+	        imgToUse = 'fogday';
+	        break; 
+	    case 'blustery':
+	        imgToUse = 'windy';
+	        break; 
+	    case 'windy':
+	        imgToUse = 'windy';
+	        break; 
+	    case 'cold':
+	        imgToUse = 'cold';
+	        break; 
+	    case 'cloudy':
+	        imgToUse = 'cloud';
+	        break; 
+	    case 'mostly cloudy':
+	        imgToUse = 'cloud';
+	        break; 
+	    case 'partly cloudy':
+	        imgToUse = 'partlycloud';
+	        break; 
+	    case 'clear':
+	        imgToUse = 'sunny';
+	        break; 
+	    case 'sunny':
+	        imgToUse = 'sunny';
+	        break; 
+	    case 'fair':
+	        imgToUse = 'sunny';
+	        break; 
+	    case 'mixed rain and hail':
+	        imgToUse = 'sleet';
+	        break; 
+	    case 'hot':
+	        imgToUse = 'dry';
+	        break; 
+	    case 'isolated thunderstorms':
+	        imgToUse = 'storm';
+	        break; 
+	    case 'scattered thunderstorms':
+	        imgToUse = 'storm';
+	        break; 
+	    case 'scattered showers':
+	        imgToUse = 'lightrain';
+	        break; 
+	    case 'heavy snow':
+	        imgToUse = 'snowstorm';
+	        break; 
+	    case 'scattered snow showers':
+	        imgToUse = 'snow';
+	        break; 
+	    case 'partly cloudy':
+	        imgToUse = 'partlycloud';
+	        break; 
+	    case 'thundershowers':
+	        imgToUse = 'partlycloudrain';
+	        break; 
+	    case 'snow showers':
+	        imgToUse = 'lightsnow';
+	        break; 
+	    case 'isolated thundershowers':
+	        imgToUse = 'partlycloudrain';
+	        break; 
+	    default: 
+	        imgToUse = 'sunny';
+	}
+	$('.weatherdata').html('<img src="/images/conditions/'+imgToUse+'.svg">')
+	};
+	</script>
+
+
+</template>

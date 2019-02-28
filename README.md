@@ -1,7 +1,9 @@
 # Instalarea imaginii Raspbian Stretch Light
 
 Formatez flash drive
+
 Cu Etcher instalez imaginea pe flash drive
+
 Conectez tastatura si ecran
 
 ## Pentru instalarea imaginii fără monitor, mouse, tastatură
